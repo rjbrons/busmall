@@ -1,10 +1,22 @@
-* {
+/* * {
   outline: thin black solid;
-}
+} */
 
 body {
   font-size: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  width: 960px;
+  margin: 0px auto;
+}
+
+button {
+  font-family: fantasy;
+  height: 50px;
+  width: 200px;
+  font-size: 15pt;
 }
 
 header {
@@ -22,6 +34,10 @@ h1 {
   font-size: 3em;
 }
 
+#images {
+  padding-left: 200px;
+}
+
 #images,
 #results {
   display: none;
@@ -31,6 +47,7 @@ h1 {
 #two,
 #three {
   text-align: center;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  max-height: 300px;
+  /* height: 100px; */
 }
