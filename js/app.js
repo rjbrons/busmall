@@ -86,9 +86,11 @@ function displayResults() {
   let parent = document.getElementById('results');
   products.forEach(function(product) {
     let child = document.createElement('p');
-    child.innerText = `${product.name} was clicked ${
-      product.clicked
-    } times out of ${product.viewed} views.`;
+    child.innerText = `${product.name} was displayed ${
+      product.viewed
+    } times, and was clicked ${Math.round(
+      (product.clicked / product.viewed) * 100
+    )}% of the time.`;
     parent.appendChild(child);
   });
 }
