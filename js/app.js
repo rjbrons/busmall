@@ -107,6 +107,9 @@ elStart.addEventListener('click', function(event) {
 let targetEl = document.getElementById('images');
 
 targetEl.addEventListener('click', function(event) {
+  if (event.target.id === 'images') {
+    return;
+  }
   console.log(event.target);
   countClicks(event);
   swapImages();
