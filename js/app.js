@@ -40,9 +40,8 @@ function ImageObject(image) {
 
   products.push(this);
 }
-
+// populate products with image objects
 images.forEach(value => new ImageObject(value));
-// console.log(products);
 
 //function to place images in DOM
 function getImageIndices() {
@@ -83,9 +82,25 @@ function countClicks(event) {
     products[previousNums[2]].clicked += 1;
   }
 }
+function displayResults() {
+  let parent = document.getElementById('results');
+  products.forEach(function(product) {
+    let child = document.createElement('p');
+    child.innerText = `${product.name} was clicked ${
+      product.clicked
+    } times out of ${product.viewed} views.`;
+    parent.appendChild(child);
+  });
+}
 
 // Execution
-swapImages(); //initiate DOM with images.
+let elStart = document.getElementById('start');
+elStart.addEventListener('click', function(event) {
+  event.preventDefault();
+  swapImages(); //initiate DOM with images.
+  document.getElementById('images').style.display = 'block';
+  document.getElementById('instructions').style.display = 'none';
+});
 
 let targetEl = document.getElementById('images');
 
@@ -99,5 +114,6 @@ targetEl.addEventListener('click', function(event) {
     let elResults = document.getElementById('results');
     elImages.style.display = 'none';
     elResults.style.display = 'block';
+    displayResults();
   }
 });
