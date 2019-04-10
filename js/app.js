@@ -93,6 +93,133 @@ function displayResults() {
     )}% of the time.`;
     parent.appendChild(child);
   });
+  displayChart();
+}
+
+function getChartData() {
+  let viewedData = [];
+  let clickedData = [];
+  let chartLabels = [];
+  products.forEach(function(item) {
+    viewedData.push(item.viewed);
+    clickedData.push(item.clicked);
+    chartLabels.push(item.name);
+  });
+  return [chartLabels, viewedData, clickedData];
+}
+
+function displayChart() {
+  let context = document.getElementById('chart').getContext('2d');
+  let data = getChartData();
+  console.log('retrieved data ', data);
+  console.log('this ran');
+  let myChart = new Chart(context, {
+    type: 'bar',
+    data: {
+      labels: data[0],
+      datasets: [
+        {
+          label: 'product selection rate',
+          data: data[2],
+          backgroundColor: [
+            '#e6194b',
+            '#3cb44b',
+            '#ffe119',
+            '#4363d8',
+            '#f58231',
+            '#911eb4',
+            '#46f0f0',
+            '#f032e6',
+            '#bcf60c',
+            '#fabebe',
+            '#008080',
+            '#e6beff',
+            '#9a6324',
+            '#fffac8',
+            '#800000',
+            '#aaffc3',
+            '#808000',
+            '#ffd8b1',
+            '#000075',
+            '#808080'
+          ],
+          borderColor: [
+            '#e6194b',
+            '#3cb44b',
+            '#ffe119',
+            '#4363d8',
+            '#f58231',
+            '#911eb4',
+            '#46f0f0',
+            '#f032e6',
+            '#bcf60c',
+            '#fabebe',
+            '#008080',
+            '#e6beff',
+            '#9a6324',
+            '#fffac8',
+            '#800000',
+            '#aaffc3',
+            '#808000',
+            '#ffd8b1',
+            '#000075',
+            '#808080'
+          ],
+          borderWidth: 1
+        },
+        {
+          label: 'product display rate',
+          data: data[1],
+          backgroundColor: [
+            '#e6194b',
+            '#3cb44b',
+            '#ffe119',
+            '#4363d8',
+            '#f58231',
+            '#911eb4',
+            '#46f0f0',
+            '#f032e6',
+            '#bcf60c',
+            '#fabebe',
+            '#008080',
+            '#e6beff',
+            '#9a6324',
+            '#fffac8',
+            '#800000',
+            '#aaffc3',
+            '#808000',
+            '#ffd8b1',
+            '#000075',
+            '#808080'
+          ],
+          borderColor: [
+            '#e6194b',
+            '#3cb44b',
+            '#ffe119',
+            '#4363d8',
+            '#f58231',
+            '#911eb4',
+            '#46f0f0',
+            '#f032e6',
+            '#bcf60c',
+            '#fabebe',
+            '#008080',
+            '#e6beff',
+            '#9a6324',
+            '#fffac8',
+            '#800000',
+            '#aaffc3',
+            '#808000',
+            '#ffd8b1',
+            '#000075',
+            '#808080'
+          ],
+          borderWidth: 1
+        }
+      ]
+    }
+  });
+  console.log(myChart);
 }
 
 // Execution
@@ -110,7 +237,6 @@ targetEl.addEventListener('click', function(event) {
   if (event.target.id === 'images') {
     return;
   }
-  console.log(event.target);
   countClicks(event);
   swapImages();
   timesClicked++;
