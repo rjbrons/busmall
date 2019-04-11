@@ -41,7 +41,21 @@ function ImageObject(image) {
   products.push(this);
 }
 // populate products with image objects
-images.forEach(value => new ImageObject(value));
+getData();
+//set up data for images
+function getData() {
+  if (localStorage.imageObjects) {
+    let storedData = JSON.parse(localStorage.imageObjects);
+    products = storedData;
+  } else {
+    images.forEach(value => new ImageObject(value));
+  }
+}
+
+//function to store data
+function storeProducts() {
+  localStorage.imageObjects = JSON.stringify(products);
+}
 
 //function to place images in DOM
 function getImageIndices() {
@@ -123,7 +137,7 @@ function displayChart() {
           data: data[2],
           backgroundColor: [
             'rgba(123, 104, 238, 0.5)',
-            'rgba(255, 0, 0.5)',
+            'rgba(255, 0, 0, 0.5)',
             'rgba(173, 255, 47, 0.5)',
             'rgba(210, 105, 30, 0.5)',
             'rgba(255, 165, 0, 0.5)',
@@ -172,7 +186,7 @@ function displayChart() {
           data: data[1],
           backgroundColor: [
             'rgba(123, 104, 238, 0.5)',
-            'rgba(255, 0, 0.5)',
+            'rgba(255, 0, 0, 0.5)',
             'rgba(173, 255, 47, 0.5)',
             'rgba(210, 105, 30, 0.5)',
             'rgba(255, 165, 0, 0.5)',
@@ -246,5 +260,6 @@ targetEl.addEventListener('click', function(event) {
     elImages.style.display = 'none';
     elResults.style.display = 'block';
     displayResults();
+    storeProducts();
   }
 });
