@@ -6,26 +6,26 @@ let products = [];
 let previousNums = [];
 //array for image data [ [imageName, source], ..... ]
 let images = [
-  ['bag', './img/bag.jpg'],
-  ['banana', './img/banana.jpg'],
-  ['bathroom', './img/bathroom.jpg'],
-  ['boots', './img/boots.jpg'],
-  ['breakfast', './img/breakfast.jpg'],
-  ['bubblegum', './img/bubblegum.jpg'],
-  ['chair', './img/chair.jpg'],
-  ['cthulhu', './img/cthulhu.jpg'],
-  ['dog-duck', './img/dog-duck.jpg'],
-  ['dragon', './img/dragon.jpg'],
-  ['pen', './img/pen.jpg'],
-  ['pet-sweep', './img/pet-sweep.jpg'],
-  ['scissors', './img/scissors.jpg'],
-  ['shark', './img/shark.jpg'],
-  ['sweep', './img/sweep.png'],
-  ['tauntaun', './img/tauntaun.jpg'],
-  ['unicorn', './img/unicorn.jpg'],
-  ['usb', './img/usb.gif'],
-  ['water-can', './img/water-can.jpg'],
-  ['wine-glass', './img/wine-glass.jpg']
+  ['Bag', './img/bag.jpg'],
+  ['Banana', './img/banana.jpg'],
+  ['Bathroom', './img/bathroom.jpg'],
+  ['Boots', './img/boots.jpg'],
+  ['Breakfast', './img/breakfast.jpg'],
+  ['Bubblegum', './img/bubblegum.jpg'],
+  ['Chair', './img/chair.jpg'],
+  ['Cthulhu', './img/cthulhu.jpg'],
+  ['Dog-duck', './img/dog-duck.jpg'],
+  ['Dragon', './img/dragon.jpg'],
+  ['Pen', './img/pen.jpg'],
+  ['Pet-sweep', './img/pet-sweep.jpg'],
+  ['Scissors', './img/scissors.jpg'],
+  ['Shark', './img/shark.jpg'],
+  ['Sweep', './img/sweep.png'],
+  ['Tauntaun', './img/tauntaun.jpg'],
+  ['Unicorn', './img/unicorn.jpg'],
+  ['Usb', './img/usb.gif'],
+  ['Water-can', './img/water-can.jpg'],
+  ['Wine-glass', './img/wine-glass.jpg']
 ];
 
 let imgIds = ['one', 'two', 'three'];
